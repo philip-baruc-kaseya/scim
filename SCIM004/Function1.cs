@@ -14,7 +14,7 @@ namespace SCIM004
         {
             //log.Info($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
             var asString = JsonConvert.SerializeObject(myQueueItem);
-            log.Info($"C# ServiceBus queue trigger function processed message as string: {asString}");
+            log.Info($"C# ServiceBus queue trigger function processed message as string: {asString}, Making a change");
         }
     }
 }
