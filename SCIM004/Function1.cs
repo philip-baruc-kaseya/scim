@@ -10,11 +10,11 @@ namespace SCIM004
     public static class Function1
     {
         [FunctionName("Function1")]
-        public static void Run([ServiceBusTrigger("sb-q-change-notifications", AccessRights.Listen, Connection = "KServiceBusQueue")]EntityChange myQueueItem, TraceWriter log)
+        public static void Run([ServiceBusTrigger("sb-q-change-notifications", AccessRights.Listen, Connection = "TargetServiceBusQueue")]EntityChange myQueueItem, TraceWriter log)
         {
             //log.Info($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
             var asString = JsonConvert.SerializeObject(myQueueItem);
-            log.Info($"C# ServiceBus queue trigger function processed message as string: {asString}");
+            log.Info($"Hello C# ServiceBus queue trigger function processed message as string: {asString}");
         }
     }
 }
